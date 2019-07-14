@@ -1,0 +1,26 @@
+﻿<Window x:Class="WpfApp_Maps.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp_Maps"
+        xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <m:Map 
+            CredentialsProvider="AqyB6cNXbAba-9i80VF5H7qx0w7e8sGrURbjP76tix1EqdKO5iKQUB6LphN8TTb4"
+            Mode="Aerial"
+            Center="40.414898, 49.853107"
+            ZoomLevel="18">
+            <m:MapItemsControl ItemsSource="{Binding Locations}">
+                <m:MapItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <m:Pushpin Location="{Binding Location}" Content="{Binding Name}">
+                        </m:Pushpin>
+                    </DataTemplate>
+                </m:MapItemsControl.ItemTemplate>
+            </m:MapItemsControl>
+        </m:Map>
+    </Grid>
+</Window>
